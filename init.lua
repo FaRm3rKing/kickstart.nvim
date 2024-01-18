@@ -212,14 +212,14 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Add indentation guides even on blank lines
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   -- Enable `lukas-reineke/indent-blankline.nvim`
-  --   -- See `:help ibl`
-  --   main = 'ibl',
-  --   opts = {},
-  -- },
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help ibl`
+    main = 'ibl',
+    opts = {},
+  },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -674,3 +674,5 @@ vim.keymap.set('n', '<C-j>', ':wincmd j<cr>', { desc = 'Move to window below' })
 vim.keymap.set('n', '<C-k>', ':wincmd k<cr>', { desc = 'Move to window above' })
 vim.keymap.set('n', '<C-l>', ':wincmd l<cr>', { desc = 'Move to window right' })
 vim.keymap.set('n', '<C-h>', ':wincmd h<cr>', { desc = 'Move to window left' })
+
+require("ibl").setup()
