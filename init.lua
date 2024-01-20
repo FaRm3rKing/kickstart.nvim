@@ -569,12 +569,12 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
     Lua = {
@@ -628,8 +628,8 @@ cmp.setup {
     completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
@@ -665,14 +665,3 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
---
--- [[ Personal configs ]]
-vim.keymap.set('n', '\\', ':split<cr>', { desc = 'Toggle file tree' })
-vim.keymap.set('n', '|', ':vsplit<cr>', { desc = 'Focus file tree' })
-
-vim.keymap.set('n', '<C-j>', ':wincmd j<cr>', { desc = 'Move to window below' })
-vim.keymap.set('n', '<C-k>', ':wincmd k<cr>', { desc = 'Move to window above' })
-vim.keymap.set('n', '<C-l>', ':wincmd l<cr>', { desc = 'Move to window right' })
-vim.keymap.set('n', '<C-h>', ':wincmd h<cr>', { desc = 'Move to window left' })
-
-require("ibl").setup()
